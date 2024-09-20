@@ -33,14 +33,12 @@
             <td>{{ order.trackNumber }}</td>
             <td>{{ order.status }}</td>
             <td class="text-center">
-              <button
+              <RouterLink
                 class="btn btn-primar eye mx-2"
-                data-bs-toggle="modal"
-                data-bs-target="#viewModal"
-                @click="viewCustomer(index)"
+                :to="{name:'view'}"
               >
                 <i class="fa-regular fa-eye"></i>
-              </button>
+              </RouterLink>
               <RouterLink
                 class="btn btn-primar square mx-2" :to="{name : 'edit'}"
               >

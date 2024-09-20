@@ -4,6 +4,7 @@ import Product from "../components/products/ProductComponent.vue";
 import Order from "../components/orders/ListOrder.vue";
 import AjoutOrder from "../components/orders/AjoutOrder.vue";
 import EditOrder from "../components/orders/editOrder.vue";
+import ShowOrder from "../components/orders/ShowOrder.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -31,6 +32,11 @@ const router = createRouter({
       path: "/create/id",
       name: "edit",
       component: EditOrder,
+    },
+    {
+      path: "/view/id",
+      name: "view",
+      component: ShowOrder,
     },
   ],
 });
