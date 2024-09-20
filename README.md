@@ -28,8 +28,8 @@ Ce projet consiste à developper une application frontend dynamique pour l'entre
 
 ## Déploiement
 
-Vercel
+Vercel : [commcercial-management](https://commcercial-management.vercel.app/)
 
 ## Auteur
 
-Hama Houllah Mangasouba
+[Hama Houllah Mangasouba](https://github.com/Mangassouba)
