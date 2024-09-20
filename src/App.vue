@@ -1,5 +1,11 @@
 <script setup>
+import { ref } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+const activeRoute = ref("customer");
+
+const setActiveRoute = (route) => {
+  activeRoute.value = route;
+};
 </script>
 
 <template>
@@ -18,19 +24,37 @@ import { RouterLink, RouterView } from "vue-router";
     <div class="collapse navbar-collapse p-2 container" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active mx-2">
-          <RouterLink :to="{name: 'customer'}"  class="nav-link ll"
-            ><i class="fa-solid fa-users mx-2"></i> Customers</RouterLink
+          <router-link
+            class="active-link"
+            :class="{ focused: activeRoute === 'customer' }"
+            to="/"
+            @click="setActiveRoute('customer')"
           >
+            <i class="fa-solid fa-users"></i>
+            Customers
+          </router-link>
         </li>
         <li class="nav-item mx-2">
-          <RouterLink :to="{name: 'product'}"  class="nav-link ll"
-            ><i class="fa-solid fa-box-open mx-2"></i>Products</RouterLink
+          <router-link
+            class="active-link"
+            :class="{ focused: activeRoute === 'product' }"
+            to="/product"
+            @click="setActiveRoute('product')"
           >
+            <i class="fa-solid fa-box-open"></i>
+            Products
+          </router-link>
         </li>
         <li class="nav-item mx-2">
-          <RouterLink :to="{name: 'order'}"  class="nav-link ll"
-            ><i class="fa-solid fa-cart-shopping mx-2"></i>Orders</RouterLink
+          <router-link
+            class="active-link"
+            :class="{ focused: activeRoute === 'order' }"
+            to="/order"
+            @click="setActiveRoute('order')"
           >
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            Orders
+          </router-link>
         </li>
       </ul>
     </div>
@@ -39,7 +63,14 @@ import { RouterLink, RouterView } from "vue-router";
 </template>
 
 <style scoped>
-.ll:focus{
-  color: blue;
+.active-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: darkgrey;
+}
+
+.active-link.focused {
+  font-weight: bold;
+  color: #007bff;
 }
 </style>

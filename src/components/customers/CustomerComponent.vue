@@ -21,6 +21,7 @@
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
+        data-bs-backdrop="false"
       >
         <div class="modal-dialog">
           <div class="modal-content">
