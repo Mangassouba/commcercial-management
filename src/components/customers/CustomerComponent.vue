@@ -171,6 +171,7 @@
                     class="form-control"
                     id="name"
                     v-model="name"
+                    disabled
                   />
                 </div>
                 <div class="mb-3">
@@ -180,6 +181,7 @@
                     id="address"
                     v-model="address"
                     rows="3"
+                    disabled
                   ></textarea>
                 </div>
                 <div class="mb-3">
@@ -189,6 +191,7 @@
                     class="form-control"
                     id="email"
                     v-model="email"
+                    disabled
                   />
                 </div>
                 <div class="mb-3">
@@ -198,6 +201,7 @@
                     class="form-control"
                     id="phone"
                     v-model="phone"
+                    disabled
                   />
                 </div>
               </div>
