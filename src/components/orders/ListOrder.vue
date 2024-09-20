@@ -11,7 +11,6 @@
         >
           Add New Order
         </RouterLink>
-        <RouterView />
       </div>
     </div>
     <div>
@@ -42,17 +41,14 @@
               >
                 <i class="fa-regular fa-eye"></i>
               </button>
-              <button
-                class="btn btn-primar square mx-2"
-                data-bs-toggle="modal"
-                data-bs-target="#updateModal"
-                @click="editCustomer(index)"
+              <RouterLink
+                class="btn btn-primar square mx-2" :to="{name : 'edit'}"
               >
                 <i class="fa-solid fa-pen-to-square"></i>
-              </button>
+              </RouterLink>
               <button
                 class="btn btn-primar trash mx-2"
-                @click="deleteCustomer(index)"
+                @click="deleteOrder(index)"
               >
                 <i class="fa-solid fa-trash"></i>
               </button>
@@ -62,6 +58,7 @@
       </table>
     </div>
   </div>
+  <RouterView />
 </template>
 
 <script setup>
@@ -97,28 +94,7 @@ const orders = ref([
     status: "Processing"
   }
 ]);
-
-const date = ref("");
-const customer = ref("");
-const deliveryAddress = ref("");
-const trackNumber = ref("");
-const status = ref("");
-
-function addCustomer() {
-  customers.value.push({
-    date: date.value,
-    customer: customer.value,
-    deliveryAddress: deliveryAddress.value,
-    trackNumber: trackNumber.value,
-    status: status.value,
-  });
-  date.value = "";
-  customer.value = "";
-  deliveryAddress.value = "";
-  trackNumber.value = "";
-  status.value = "";
-}
-function deleteCustomer(index) {
+function deleteOrder(index) {
   if (window.confirm("Are you sure you want to delete this order?")) {
     orders.value.splice(index, 1);
   }
