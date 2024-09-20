@@ -170,7 +170,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                Create New Product
+                View Product
               </h5>
               <button
                 type="button"
@@ -265,7 +265,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                Create New Product
+                Edit Product
               </h5>
               <button
                 type="button"
